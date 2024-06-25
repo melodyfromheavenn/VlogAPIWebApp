@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Інформатика-2024-Лаб2 Користувачі</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <style>
+        #editUser {
+            display: none;
+        }
+
+            #editUser a {
+                cursor: pointer;
+                color: red;
+                text-decoration: none;
+                font-size: 20px;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+    </style>
+</head>
+<body>
+    <h1>Інформатика-2024-Лаб2 Користувачі</h1>
+    <h3>Додати користувача</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addUser()">
+        <input type="text" id="add-fullname" placeholder="ПІБ">
+        <input type="text" id="add-city" placeholder="Місто">
+        <input type="text" id="add-status" placeholder="Статус">
+        <input type="submit" value="Додати">
+    </form>
+
+    <div id="editUser">
+        <h3>Редагувати користувача</h3>
+        <form action="javascript:void(0);" onsubmit="updateUser()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-fullname" placeholder="ПІБ">
+            <input type="text" id="edit-city" placeholder="Місто">
+            <input type="text" id="edit-status" placeholder="Статус">
+            <input type="submit" value="Зберегти">
+            <a onclick="closeInput()" aria-label="Закрити">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>ПІБ</th>
+            <th>Місто</th>
+            <th>Статус</th>
+        </tr>
+        <tbody id="users"></tbody>
+    </table>
+
+    <script src="js/lab2.js" asp-append-version="true"></script>
+</body>
+</html>
